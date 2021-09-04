@@ -22,6 +22,11 @@ cargo test --lib -- --show-output
 
 ## Example
 
+Create a new project:
+```sh
+cargo new myapp
+```
+
 ```Cargo.toml```
 ```toml
 [package]
