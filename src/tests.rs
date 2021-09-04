@@ -6,9 +6,10 @@ mod tests {
     use crate::{builder, printer::Printer, IDType};
     use multimap::MultiMap;
 
+    const TREE_MAP_DEF: &[(IDType, IDType)] = &[(1, 2), (1, 3), (1, 4), (4, 5), (4, 6), (1, 7)];
+
     #[test]
     fn test_from_builder() {
-        const TREE_MAP_DEF: &[(IDType, IDType)] = &[(1, 2), (1, 3), (1, 4), (4, 5), (4, 6), (1, 7)];
         let tree_map: MultiMap<IDType, IDType> = TREE_MAP_DEF.iter().cloned().collect();
 
         let root = builder::build_composite(1, &tree_map);
@@ -17,7 +18,6 @@ mod tests {
 
     #[test]
     fn test_component_debug_print() {
-        const TREE_MAP_DEF: &[(IDType, IDType)] = &[(1, 2), (1, 3), (1, 4), (4, 5), (4, 6), (1, 7)];
         let tree_map: MultiMap<IDType, IDType> = TREE_MAP_DEF.iter().cloned().collect();
 
         let root = builder::build_composite(1, &tree_map);
