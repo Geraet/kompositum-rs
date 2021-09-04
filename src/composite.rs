@@ -37,8 +37,6 @@ impl Composite {
     }
 
     pub fn visit_children(&self, visitor: &mut dyn Visitor) {
-        for child in &self.children {
-            child.accept(visitor);
-        }
+        self.children.iter().for_each(|child| child.accept(visitor));
     }
 }
