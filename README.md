@@ -20,6 +20,23 @@ Running the tests:
 cargo test --lib -- --show-output
 ```
 
+## Example
+
+main.rs
+```
+use kompositum;
+
+fn main() {
+    const TREE_MAP_DEF: &[(kompositum::IDType, kompositum::IDType)] =
+        &[(1, 2), (1, 3), (1, 4), (4, 5), (4, 6), (1, 7)];
+    let tree_map: kompositum::MultiMap<kompositum::IDType, kompositum::IDType> =
+        TREE_MAP_DEF.iter().cloned().collect();
+
+    let root = kompositum::builder::build_composite(1, &tree_map);
+    root.accept(&mut kompositum::printer::Printer::new());
+}
+```
+
 ## License
 
 Released under the [MIT License](LICENSE)
