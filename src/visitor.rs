@@ -4,6 +4,6 @@
 use crate::{Composite, Leaf};
 
 pub trait Visitor {
-    fn visit_composite(&mut self, c: &Composite);
-    fn visit_leaf(&mut self, l: &Leaf);
+    fn visit_composite(&mut self, composite: &Composite);
+    fn visit_leaf(&mut self, leaf: &Leaf);
 }

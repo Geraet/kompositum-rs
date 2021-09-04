@@ -22,8 +22,8 @@ impl Component for Composite {
         self.uid
     }
 
-    fn accept(&self, v: &mut dyn Visitor) {
-        v.visit_composite(self);
+    fn accept(&self, visitor: &mut dyn Visitor) {
+        visitor.visit_composite(self);
     }
 }
 
@@ -36,9 +36,9 @@ impl Composite {
         !self.children.is_empty()
     }
 
-    pub fn visit_children(&self, v: &mut dyn Visitor) {
+    pub fn visit_children(&self, visitor: &mut dyn Visitor) {
         for child in &self.children {
-            child.accept(v);
+            child.accept(visitor);
         }
     }
 }

@@ -5,5 +5,5 @@ use crate::{IDType, Visitor};
 
 pub trait Component {
     fn get_uid(&self) -> IDType;
-    fn accept(&self, v: &mut dyn Visitor);
+    fn accept(&self, visitor: &mut dyn Visitor);
 }
