@@ -22,8 +22,19 @@ cargo test --lib -- --show-output
 
 ## Example
 
-main.rs
+```Cargo.toml```
+```toml
+[package]
+name = "myapp"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+kompositum = { git = "https://github.com/Geraet/kompositum-rs", branch = "master" }
 ```
+
+```main.rs```
+```rust
 use kompositum;
 
 fn main() {
