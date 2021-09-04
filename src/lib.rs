@@ -1,15 +1,17 @@
 // Copyright(c) 2021 René Hansen.
 // Distributed under the MIT License (http://opensource.org/licenses/MIT)
 
-mod builder;
-mod component;
-mod composite;
-mod leaf;
-mod printer;
-mod tests;
-mod visitor;
+pub mod builder;
+pub mod component;
+pub mod composite;
+pub mod leaf;
+pub mod printer;
+pub mod tests;
+pub mod visitor;
 
-use crate::{component::Component, composite::Composite, leaf::Leaf, visitor::Visitor};
+pub use multimap::MultiMap;
+
+pub use crate::{component::Component, composite::Composite, leaf::Leaf, visitor::Visitor};
 
 type Children = Vec<Box<dyn Component>>;
-type IDType = u64;
+pub type IDType = u64;
