@@ -6,7 +6,7 @@ pub mod component;
 pub mod composite;
 pub mod leaf;
 pub mod printer;
-pub mod tests;
+mod tests;
 pub mod visitor;
 
 pub use multimap::MultiMap;
