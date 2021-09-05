@@ -13,10 +13,10 @@ pub fn build_composite(uid: IDType, tree_map: &ParentChildTreeDef) -> Box<dyn Co
         let mut composite = Composite::new(uid);
         match tree_map.get_vec(&uid) {
             Some(children) => {
-                for child in children {
+                children.iter().for_each(|child| {
                     let new_child = build_composite(*child, &tree_map);
                     composite.add_child(new_child);
-                }
+                });
             }
             None => (),
         }
